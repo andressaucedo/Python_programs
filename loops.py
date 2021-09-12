@@ -17,4 +17,4 @@ def loopy(friend):
       print("Nope. Nice to meet you though." + "\n")
 
 if __name__ == "__main__":
-  loopy("Diane")
+  loopy("Jane")
