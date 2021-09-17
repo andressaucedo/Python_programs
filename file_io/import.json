@@ -1,0 +1,18 @@
+{
+    "machines": [
+        {
+            "maker":"Tim Hendricks",
+            "model":"Black Widow"
+        },
+
+        {
+            "maker":"Dan Dringenberg",
+            "model":"P3"
+        },
+
+        {
+            "maker":"Inkjecta",
+            "model":"Flite X1"
+        }
+    ]
+}
