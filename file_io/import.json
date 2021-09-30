@@ -1,18 +1,22 @@
 {
-    "machines": [
+    "machines":
+    [
         {
             "maker":"Tim Hendricks",
-            "model":"Black Widow"
+            "model":"Black Widow",
+            "type":"electromagnetic coil"
         },
 
         {
             "maker":"Dan Dringenberg",
-            "model":"P3"
+            "model":"P3",
+            "type":"electromagnetic coil"
         },
 
         {
             "maker":"Inkjecta",
-            "model":"Flite X1"
+            "model":"Flite X1",
+            "type":"electric rotary"
         }
     ]
 }

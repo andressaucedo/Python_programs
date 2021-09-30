@@ -13,7 +13,7 @@ def path_exercises():
     current_dir = pathlib.Path.cwd()  # Variable for the working directory
     print(current_dir)
 
-    mypath = pathlib.Path.cwd() / 'resources/'  # New folder path
+    mypath = pathlib.Path.cwd() / 'myfolder/'  # New folder path
     mypath.mkdir() # Make the new folder
     myfile = pathlib.Path(mypath) / 'snakescales.tmp'
     print(myfile)
