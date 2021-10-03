@@ -21,6 +21,7 @@ def pokemon_importer(file_path):
         print("'quit' to end")
         pokemon_name = input("Enter a pokemon name: ")
         if pokemon_name == 'quit':
+            outfile.close()
             break
         found = 0
         for i in master_dict:
@@ -43,8 +44,13 @@ def pokemon_importer(file_path):
             for i in buddy.attacks:
                 print (f"\tAttack: {i['name']} - Damage: {i['damage']}")
             print (f"\tWeakness: {buddy.weaknesses[0]['type']} - Multiplier: {buddy.    weaknesses[0]['value']}")
+
+        choice = input("Add to Party?: ")
+        if choice[0].lower() == 'y':
+            bd = vars(buddy)
+            with open('myparty.json','a') as outfile:
+                json.dump(bd,outfile)
+
     
 if __name__ == "__main__":
-    pokemon_importer('my_pokemon_master_list.json')
-
-
+        pokemon_importer('my_pokemon_master_list.json')
