@@ -18,11 +18,13 @@ def pokemon_importer(file_path):
 
     master_dict = json.load(datafile)
     while(1):
+        print("'quit' to end")
         pokemon_name = input("Enter a pokemon name: ")
-
+        if pokemon_name == 'quit':
+            break
         found = 0
         for i in master_dict:
-            if i['name'] == pokemon_name:
+            if i['name'].lower() == pokemon_name.lower():
                 found = 1
                 buddy = Pokemon(
                     i['name'],
@@ -33,24 +35,15 @@ def pokemon_importer(file_path):
         
         if found != 1:
             print("Your entry was not found")
-        
-       
-            
-        print (f"\tName: {buddy.name}")
-        for i in buddy.types:
-            print (f"\tType: {i}")
-        print (f"\tHP: {buddy.hp}")
-        for i in buddy.attacks:
-            print (f"\tAttack: {i['name']} - Damage: {i['damage']}")
-        print (f"\tWeakness: {buddy.weaknesses[0]['type']} - Multiplier: {buddy.weaknesses[0]['value']}")
-        
-
-        choice = input("Search another?")
-        if choice[0] == 'y' or choice[0] == 'Y':
-            continue
-        else:
-            return 0
-
+        else:    
+            print (f"\tName: {buddy.name}")
+            for i in buddy.types:
+                print (f"\tType: {i}")
+            print (f"\tHP: {buddy.hp}")
+            for i in buddy.attacks:
+                print (f"\tAttack: {i['name']} - Damage: {i['damage']}")
+            print (f"\tWeakness: {buddy.weaknesses[0]['type']} - Multiplier: {buddy.    weaknesses[0]['value']}")
+    
 if __name__ == "__main__":
     pokemon_importer('my_pokemon_master_list.json')
 
