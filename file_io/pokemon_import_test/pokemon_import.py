@@ -13,6 +13,14 @@ def pokemon_importer(file_path):
             self.attacks = attacks
             self.weaknesses = weaknesses    
 
+#            self.name = name
+#            self.start_hp = start_hp
+#            self.energy_type = energy_type
+#            self.weakness = weakness
+#            self.resistance = resistance
+#            self.moves = moves
+#            self.is_fainted = bool(True,False)
+
     # Opening data file in the function call argument
     datafile = open(file_path,)
 
@@ -55,11 +63,13 @@ def pokemon_importer(file_path):
             print (f"\tWeakness: {buddy.weaknesses[0]['type']} - Multiplier: {buddy.    weaknesses[0]['value']}")
 
         # Option to add pokemon to output file 'myparty.json'
-        choice = input("Add to Party?: ")
-        if choice[0].lower() == 'y':
-            bd = vars(buddy)
-            with open('myparty.json','a') as outfile:
-                json.dump(bd,outfile)
+        if found == 1:
+            choice = input("Add to Party?: ")
+            if choice[0].lower() == 'y':
+                bd = vars(buddy)
+                with open('myparty.json','a') as outfile:
+                    json.dump(bd,outfile)
+
 
     
 if __name__ == "__main__":
